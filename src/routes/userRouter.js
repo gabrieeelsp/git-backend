@@ -1,8 +1,8 @@
 const { Router } = require('express');
 const userRouter = Router();
 
-userRouter.get('/', (req, res) => {
-    res.status(200).send('Estoy en la ruta GET /users');
-});
+const { getAll } = require('../controllers/userController');
+
+userRouter.get('/', getAll);
 
 module.exports = userRouter;
